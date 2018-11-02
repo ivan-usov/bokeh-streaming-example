@@ -16,6 +16,8 @@ if __name__ == "__main__":
     skt = ctx.socket(zmq.PUB)
     skt.bind('tcp://127.0.0.1:9000')
 
+    print('Start sending...')
+
     waveform_gen = waveform_gen()
     for n in range(100):
         # sending data rate ~2 Hz
