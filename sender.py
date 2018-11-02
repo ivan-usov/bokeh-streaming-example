@@ -7,7 +7,7 @@ import zmq
 
 def waveform_gen(length=10):
     waveforms = []
-    for i in range(5):
+    for _ in range(5):
         waveforms.append(np.random.uniform(-1, 9, size=(length, )))
     return cycle(waveforms)
 

@@ -12,7 +12,7 @@ f = figure()
 l = f.line(x='x', y='y', source=source)
 
 def update():
-    if len(receiver.buffer) > 0:
+    if receiver.buffer:
         data = receiver.buffer[-1]
         source.data.update(x=range(len(data)), y=data)
 
