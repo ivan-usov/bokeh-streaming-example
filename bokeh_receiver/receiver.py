@@ -1,6 +1,7 @@
 from collections import deque
-import zmq
+
 import numpy as np
+import zmq
 
 buffer = deque(maxlen=100)
 
@@ -12,10 +13,9 @@ def stream_receive():
 
     poller = zmq.Poller()
     poller.register(zmq_socket, zmq.POLLIN)
-    
+
     while True:
         events = dict(poller.poll(1000))
         if zmq_socket in events:
             waveform = np.frombuffer(zmq_socket.recv())
             buffer.append(waveform)
-

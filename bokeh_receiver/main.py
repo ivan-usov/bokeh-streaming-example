@@ -1,5 +1,5 @@
-from bokeh.plotting import figure, ColumnDataSource
 from bokeh.io import curdoc
+from bokeh.plotting import ColumnDataSource, figure
 
 import receiver
 
@@ -18,4 +18,3 @@ def update():
 
 doc.add_periodic_callback(update, 1000/FPS)
 doc.add_root(f)
-
